@@ -9,7 +9,7 @@ public sealed class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<Fin
     public FinanceDbContext CreateDbContext(string[] args)
     {
         var conn = Environment.GetEnvironmentVariable("FINANCE_DB")
-            ?? "Host=localhost;Port=5432;Database=finance_db;Username=postgres;Password=123456";
+            ?? "postgresql://finance_2bkw_user:3AIJPHecXf2zQX8ZzVasQtIXP2IyWa6v@dpg-d77uf08gjchc73d6mm8g-a.oregon-postgres.render.com/finance_2bkw";
 
         var options = new DbContextOptionsBuilder<FinanceDbContext>()
             .UseNpgsql(conn)
